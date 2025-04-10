@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="كاظم زياد - خريج أمن المعلومات من جامعة بابل، متخصص في الأمن السيبراني وبرمجة Python وSQL">
+  <meta name="keywords" content="أمن سيبراني, برمجة, Python, SQL, شبكات, كاظم زياد">
+  <title>كاظم زياد - سيرة ذاتية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(145deg, #0a0a0a 0%, #1c2526 100%);
+      color: #e0e0e0;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 25px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.9);
+      backdrop-filter: blur(15px);
+      padding: 25px 0;
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(20, 20, 20, 1);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 2.4rem;
+      color: #64ffda;
+      font-weight: 700;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin-left: 45px;
+      font-size: 1.3rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: #64ffda;
+      bottom: -10px;
+      right: 0;
+      transition: width 0.4s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: #64ffda;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, #1f2a44 0%, #0f0f0f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(100, 255, 218, 0.3) 0%, transparent 60%);
+      top: -100%;
+      right: -100%;
+      animation: pulse 20s infinite ease-in-out;
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      padding: 40px;
+      margin-top: 100px; /* زيادة الهامش لتحريك الصورة للأسفل أكثر */
+    }
+
+    .profile-img {
+      border-radius: 50%;
+      width: 260px;
+      height: 260px;
+      border: 14px solid #64ffda;
+      box-shadow: 0 0 60px rgba(100, 255, 218, 0.7);
+      transition: all 0.6s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.15) rotate(12deg);
+      box-shadow: 0 0 80px rgba(100, 255, 218, 0.9);
+    }
+
+    .hero h1 {
+      font-size: 5.5rem;
+      color: #64ffda;
+      margin: 40px 0;
+      text-shadow: 0 0 30px rgba(100, 255, 218, 1);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.7rem;
+      color: #d1d5db;
+      max-width: 900px;
+      margin: 0 auto 70px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .social-links a {
+      margin: 0 40px;
+      color: #fff;
+      font-size: 3.2rem;
+      transition: all 0.5s ease;
+    }
+
+    .social-links a:hover {
+      color: #64ffda;
+      transform: translateY(-15px) scale(1.25);
+    }
+
+    /* Sections */
+    .section {
+      padding: 140px 25px;
+      background: #1f2a44;
+      margin-bottom: 50px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(100, 255, 218, 0.15) 0%, transparent 70%);
+      opacity: 0.4;
+    }
+
+    .section h2 {
+      font-size: 3.5rem;
+      color: #64ffda;
+      margin-bottom: 70px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section h2::after {
+      content: '';
+      width: 120px;
+      height: 7px;
+      background: linear-gradient(to right, #64ffda, transparent);
+      position: absolute;
+      bottom: -30px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .about p {
+      font-size: 1.5rem;
+      color: #d1d5db;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Skills Section */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 70px;
+      padding: 60px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .skill-item {
+      background: #252f3f;
+      padding: 40px;
+      border-radius: 25px;
+      transition: all 0.6s ease;
+      text-align: center;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-30px) scale(1.05);
+      box-shadow: 0 25px 55px rgba(100, 255, 218, 0.5);
+      background: #2c3548;
+    }
+
+    .skill-item img {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 35px;
+      filter: brightness(1.5) drop-shadow(0 0 25px rgba(100, 255, 218, 0.8));
+      transition: transform 0.5s ease;
+    }
+
+    .skill-item:hover img {
+      transform: scale(1.25) rotate(10deg);
+    }
+
+    .skill-item p {
+      font-size: 1.5rem;
+      color: #d1d5db;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: #3b4a6b;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #64ffda;
+      transition: width 1s ease-in-out;
+    }
+
+    /* Projects Section */
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 60px;
+      padding: 60px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-item {
+      background: #252f3f;
+      padding: 35px;
+      border-radius: 25px;
+      transition: all 0.6s ease;
+      text-align: center;
+    }
+
+    .project-item:hover {
+      transform: translateY(-25px);
+      box-shadow: 0 25px 55px rgba(100, 255, 218, 0.5);
+    }
+
+    .project-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.5s ease;
+    }
+
+    .project-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .project-item h3 {
+      font-size: 1.9rem;
+      color: #64ffda;
+      margin-bottom: 25px;
+    }
+
+    .project-item p {
+      font-size: 1.3rem;
+      color: #d1d5db;
+      margin-bottom: 20px;
+    }
+
+    /* Contact Section */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      background: #252f3f;
+      color: #e0e0e0;
+      font-size: 1.2rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+    }
+
+    .contact-form textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 15px;
+      background: #64ffda;
+      color: #1f2a44;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .contact p {
+      font-size: 1.6rem;
+      color: #d1d5db;
+      margin-top: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact a {
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact a:hover {
+      background: rgba(100, 255, 218, 0.3);
+      color: #fff;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 60px;
+      left: 60px;
+      width: 80px;
+      height: 80px;
+      background: #64ffda;
+      color: #1f2a44;
+      border-radius: 50%;
+      border: none;
+      font-size: 2.2rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.5s ease;
+      z-index: 1000;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+    }
+
+    .scroll-top:hover {
+      transform: scale(1.25);
+      background: #fff;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    .section {
+      opacity: 0;
+      transform: translateY(120px);
+      transition: all 1.2s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 4rem; }
+      .hero p { font-size: 1.5rem; }
+      .social-links a { font-size: 2.8rem; margin: 0 30px; }
+      .nav-links a { margin-left: 35px; font-size: 1.2rem; }
+      .skills-list { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+      .projects-list { grid-template-columns: 1fr; }
+      .section h2 { font-size: 3rem; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-content { flex-direction: column; }
+      .nav-links { margin-top: 30px; }
+      .nav-links a { margin: 0 25px; }
+      .hero h1 { font-size: 3rem; }
+      .profile-img { width: 220px; height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="nav-logo">كاظم زياد</div>
+      <div class="nav-links">
+        <a href="#hero">الرئيسية</a>
+        <a href="#about">نبذة عني</a>
+        <a href="#skills">المهارات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#contact">تواصل معي</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <img src="kadim.jpg" alt="كاظم زياد" class="profile-img">
+        <h1>كاظم زياد</h1>
+        <p>
+          تخرجت مؤخرًا من جامعة بابل، كلية تكنولوجيا المعلومات، قسم أمن المعلومات. شغوف بمجال الأمن السيبراني، مع مهارات متقدمة في البرمجة (خاصة Python)، وخبرة واسعة في قواعد بيانات SQL وتحليل الثغرات الأمنية.
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/kadimtech/kadim.git" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kadim-it-72b47535b/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/_.vrr" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1EGe9nMyXs/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div id="message" style="text-align: center; margin-top: 20px;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <h2>نبذة عني</h2>
+      <p>
+        أنا كاظم زياد، خريج جامعة بابل - كلية تكنولوجيا المعلومات، قسم أمن المعلومات. أمتلك شغفًا كبيرًا بمجالات الأمن السيبراني، تحليل الثغرات، وتطوير الحلول الأمنية. لدي خبرة واسعة في البرمجة بلغات مثل Python وإدارة قواعد البيانات باستخدام SQL، وأسعى دائمًا لتطوير مهاراتي وتقديم حلول مبتكرة.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+      <h2>المهارات</h2>
+      <div class="skills-list">
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python">
+          <p>Python</p>
+          <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/96/000000/linux.png" alt="Linux">
+          <p>Linux</p>
+          <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/96/000000/database.png" alt="SQL">
+          <p>SQL</p>
+          <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <img src="https://img.icons8.com/color/96/000000/networking-manager.png" alt="Networking">
+          <p>Networking</p>
+          <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <h2>المشاريع</h2>
+      <div class="projects-list">
+        <div class="project-item">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مشروع 1">
+          <h3>مشروع تحليل الثغرات</h3>
+          <p>تطبيق لتحليل الثغرات الأمنية باستخدام Python وتقنيات الأمن السيبراني.</p>
+        </div>
+        <div class="project-item">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مشروع 2">
+          <h3>إدارة قاعدة بيانات</h3>
+          <p>نظام إدارة قواعد بيانات باستخدام SQL لتحسين كفاءة التخزين.</p>
+        </div>
+        <div class="project-item">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مشروع 3">
+          <h3>أداة شبكات</h3>
+          <p>أداة لتحليل الشبكات واختبار الأداء باستخدام Linux.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <h2>تواصل معي</h2>
+      <form class="contact-form" action="send_mail.php" method="POST">
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+      <p>أو عبر البريد الإلكتروني: <a href="mailto:kadimtech@gmail.com">kadimtech@gmail.com</a></p>
+    </section>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Section animations
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    sections.forEach(section => observer.observe(section));
+
+    // Scroll to top button
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+    const message = urlParams.get('message');
+    const messageDiv = document.getElementById('message');
+    if (status === 'success') {
+      messageDiv.innerHTML = '<p style="color: #64ffda;">تم إرسال الرسالة بنجاح!</p>';
+    } else if (status === 'error') {
+      messageDiv.innerHTML = '<p style="color: #ff6b6b;">' + (message || 'حدث خطأ أثناء الإرسال، حاول مرة أخرى.') + '</p>';
+    }
+  </script>
+</body>
+</html>
